@@ -1,0 +1,22 @@
+[
+  {
+    "name": "iPhone 13",
+    "price": 30000,
+    "description": "Смартфон Apple з хорошою камерою"
+  },
+  {
+    "name": "Samsung Galaxy S21",
+    "price": 25000,
+    "description": "Потужний Android смартфон"
+  },
+  {
+    "name": "Xiaomi Redmi Note 11",
+    "price": 9000,
+    "description": "Бюджетний варіант з хорошою батареєю"
+  },
+  {
+    "name": "MacBook Air M1",
+    "price": 45000,
+    "description": "Легкий і швидкий ноутбук"
+  }
+]
