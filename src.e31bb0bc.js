@@ -157,16 +157,8 @@ buttonRef.addEventListener("click", () => {
   const bookmark = createBookmark(inputValue);
   listRef.appendChild(bookmark);
 });
-// if (localStorage.getItem("links") !== "") {
-//   return li
-// }
-// let links = JSON.parse(localStorage.getItem("links"));
-//  if (links !== "") {
-
-// }
-
 let links = JSON.parse(localStorage.getItem("links"));
-if (links !== "") {}
+listRef.appendChild(createBookmark(links));
 },{}],"js/second.js":[function(require,module,exports) {
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
@@ -2605,11 +2597,13 @@ listRef.innerHTML = (0, _template.default)({
 });
 searchRef.addEventListener("input", e => {
   const value = e.target.value.toLowerCase();
+  const search = localStorage.setItem("searchResult", JSON.stringify(value));
   const filteredPhones = _phones.default.filter(phone => phone.name.toLowerCase().includes(value));
   listRef.innerHTML = (0, _template.default)({
     phones: filteredPhones
   });
 });
+searchRef.value = JSON.parse(localStorage.getItem("searchResult"));
 },{"../../phones.json":"../phones.json","../template.hbs":"template.hbs"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -2642,7 +2636,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57303" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
