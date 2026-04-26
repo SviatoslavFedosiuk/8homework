@@ -2592,18 +2592,20 @@ var _template = _interopRequireDefault(require("../template.hbs"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const listRef = document.querySelector(".product-list");
 const searchRef = document.querySelector(".search");
-listRef.innerHTML = (0, _template.default)({
-  phones: _phones.default
-});
 searchRef.addEventListener("input", e => {
   const value = e.target.value.toLowerCase();
-  const search = localStorage.setItem("searchResult", JSON.stringify(value));
+  localStorage.setItem("searchResult", value);
+  render(value);
+});
+function render(value) {
   const filteredPhones = _phones.default.filter(phone => phone.name.toLowerCase().includes(value));
   listRef.innerHTML = (0, _template.default)({
     phones: filteredPhones
   });
-});
-searchRef.value = JSON.parse(localStorage.getItem("searchResult"));
+}
+const savedValue = localStorage.getItem("searchResult") || "";
+searchRef.value = savedValue;
+render(savedValue);
 },{"../../phones.json":"../phones.json","../template.hbs":"template.hbs"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -2636,7 +2638,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57303" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52787" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
