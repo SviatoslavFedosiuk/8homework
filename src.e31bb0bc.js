@@ -157,6 +157,16 @@ buttonRef.addEventListener("click", () => {
   const bookmark = createBookmark(inputValue);
   listRef.appendChild(bookmark);
 });
+// if (localStorage.getItem("links") !== "") {
+//   return li
+// }
+// let links = JSON.parse(localStorage.getItem("links"));
+//  if (links !== "") {
+
+// }
+
+let links = JSON.parse(localStorage.getItem("links"));
+if (links !== "") {}
 },{}],"js/second.js":[function(require,module,exports) {
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
@@ -2632,7 +2642,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57484" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57078" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
