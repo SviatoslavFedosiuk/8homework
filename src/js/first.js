@@ -47,3 +47,6 @@ buttonRef.addEventListener("click", () => {
   const bookmark = createBookmark(inputValue);
   listRef.appendChild(bookmark);
 });
+
+let links = JSON.parse(localStorage.getItem("links"))
+listRef.appendChild(createBookmark(links));
